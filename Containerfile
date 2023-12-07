@@ -2,7 +2,7 @@ ARG ALPINE_TAG=latest
 
 FROM alpine:${ALPINE_TAG}
 
-LABEL maintainer="Vinu K <vkochuku@redhat.com>" \
+LABEL maintainer="Vinu Kochukuttan <vkochuku@redhat.com>" \
       description="A container image with various network tools pre-installed."
 
 RUN apk -U upgrade \
