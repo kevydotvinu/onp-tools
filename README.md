@@ -3,7 +3,7 @@
 A container image with various network tools pre-installed.
 
 ## Create Pod and Service
-```
+```bash
 apiVersion: v1
 kind: Pod
 metadata:
@@ -38,4 +38,9 @@ spec:
     protocol: TCP
   selector:
     app: onp
+```
+
+## Create a container using `podman`
+```bash
+sudo podman run --tty --interactive --privileged --net host quay.io/onp/onp-tools
 ```
