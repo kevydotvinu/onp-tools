@@ -47,6 +47,7 @@ RUN apk -U upgrade \
         tshark \
         wget \
         python3 \
+        py3-requests \
     && apk add --repository=https://dl-cdn.alpinelinux.org/alpine/edge/testing/ --no-cache \
         envsubst \
         grpcurl \
@@ -54,9 +55,6 @@ RUN apk -U upgrade \
     && apk add --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community/ --no-cache \
         arp-scan \
         kcat \
-    && python3 -m ensurepip \
-    && pip3 install --no-cache-dir --disable-pip-version-check --upgrade pip \
-    && python3 -m pip install --no-cache-dir --disable-pip-version-check requests \
     && rm -rf /var/cache/apk/* \
     && echo 'export PS1="[network-tools]\$ "' >> /root/.bash_profile
 
