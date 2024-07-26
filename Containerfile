@@ -5,6 +5,8 @@ FROM alpine:${ALPINE_TAG}
 LABEL maintainer="Vinu Kochukuttan <vkochuku@redhat.com>" \
       description="A container image with various network tools pre-installed."
 
+COPY server.go /
+
 RUN apk -U upgrade \
     && apk add --no-cache \
         apache2-utils \
@@ -18,6 +20,7 @@ RUN apk -U upgrade \
         findutils \
         fping \
         git \
+	go \
         gping \
         ipcalc \
         iperf \
